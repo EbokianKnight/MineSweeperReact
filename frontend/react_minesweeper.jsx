@@ -4,19 +4,22 @@ var Minesweeper = require('./minesweeper');
 var Board = require('./board');
 
 var MinesweeperGame = React.createClass({
+
   getInitialState: function() {
     return { board: new Minesweeper.Board(9, 10) };
   },
+
   resetGame: function () {
     this.setState({ board: new Minesweeper.Board(9, 10) });
   },
+
   updateGame: function (tile, flagging) {
     if (flagging) {
       tile.toggleFlag();
     } else {
       tile.explore();
     }
-    this.setState({ board: this.state.board });
+    this.forceUpdate();
   },
 
   render: function () {
