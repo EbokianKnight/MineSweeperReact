@@ -8,13 +8,20 @@ var MinesweeperGame = React.createClass({
     return { board: new Minesweeper.Board(9, 10) };
   },
 
-  updateGame: function () {
-
+  updateGame: function (tile, flagging) {
+    if (flagging) {
+      tile.toggleFlag();
+    } else {
+      tile.explore();
+    }
+    this.setState({ board: this.state.board });
   },
 
   render: function () {
+    var gameWon = this.state.board.won();
+    var gameLost = this.state.board.lost();
     return(
-      <Board board={this.state.board} updateGame={this.updateGame} />
+      <Board board={this.state.board} won={gameWon} lost={gameLost} updateGame={this.updateGame} />
     );
   }
 });
