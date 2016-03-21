@@ -1,0 +1,62 @@
+body, h1, p, ul, li {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  font-family: sans-serif;
+}
+
+body {
+  color: #222;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+.instructions {
+  font-style: italic;
+}
+
+.tile {
+  width: 30px;
+  height: 30px;
+  display: block;
+  float: left;
+  background: #999;
+  box-sizing: border-box;
+  border-top: 2px solid #ccc;
+  border-left: 2px solid #ccc;
+  border-bottom: 2px solid #777;
+  border-right: 2px solid #777;
+  text-align: center;
+}
+
+.explored {
+  border-top: 2px solid #777;
+  border-left: 2px solid #777;
+  border-bottom: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+}
+
+.flagged:before {
+  content: "☠";
+  margin-left: -3px;
+}
+
+.grid {
+ width: 270px;
+ margin: 20px auto;
+ border: solid 10px #777;
+}
+
+.group:after {
+  content: '';
+  display: block;
+  clear: both;
+}
