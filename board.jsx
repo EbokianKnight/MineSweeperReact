@@ -4,11 +4,12 @@ var Tile = require('./tile');
 
 var Board = React.createClass({
 
-
   render:  function () {
+    var resetButton = this.props.reset;
     var tiles = [];
     var that = this;
     var message = "";
+    var buttonClass = !this.props.won && !this.props.lost ? "disable" : "";
 
     if (this.props.won) {
       message = "You Did Not Blow Up";
@@ -30,6 +31,9 @@ var Board = React.createClass({
           })}
         </ul>
         <h2 className="end-message">{message}</h2>
+        <button className={"reset-button " + buttonClass} onClick={resetButton}>
+          Reset Game
+        </button>
       </div>
     );
   }

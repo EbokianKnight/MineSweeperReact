@@ -1,4 +1,4 @@
-body, h1, p, ul, li {
+body, h1, p, ul, li, button {
   border: 0;
   margin: 0;
   padding: 0;
@@ -8,6 +8,7 @@ body, h1, p, ul, li {
 }
 
 body {
+  margin-top: 25px;
   color: #222;
 }
 
@@ -21,7 +22,7 @@ h1 {
 
 .end-message {
   text-align: center;
-  font-size: 36px;
+  font-size: 24px;
 }
 
 .instructions {
@@ -81,4 +82,20 @@ h1 {
   content: '';
   display: block;
   clear: both;
+}
+
+.reset-button {
+  margin: auto;
+  display: block;
+  border: 5px solid #777;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.reset-button:hover {
+  background: #888;
+}
+
+.disable {
+  display: none;
 }

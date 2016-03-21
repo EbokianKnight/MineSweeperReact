@@ -7,7 +7,9 @@ var MinesweeperGame = React.createClass({
   getInitialState: function() {
     return { board: new Minesweeper.Board(9, 10) };
   },
-
+  resetGame: function () {
+    this.setState({ board: new Minesweeper.Board(9, 10) });
+  },
   updateGame: function (tile, flagging) {
     if (flagging) {
       tile.toggleFlag();
@@ -21,7 +23,8 @@ var MinesweeperGame = React.createClass({
     var gameWon = this.state.board.won();
     var gameLost = this.state.board.lost();
     return(
-      <Board board={this.state.board} won={gameWon} lost={gameLost} updateGame={this.updateGame} />
+      <Board board={this.state.board} won={gameWon} lost={gameLost}
+        reset={this.resetGame} updateGame={this.updateGame} />
     );
   }
 });
