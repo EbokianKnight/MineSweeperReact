@@ -24,6 +24,7 @@ h1 {
 }
 
 .tile {
+  font-weight: bold;
   width: 30px;
   height: 30px;
   display: block;
@@ -35,6 +36,11 @@ h1 {
   border-bottom: 2px solid #777;
   border-right: 2px solid #777;
   text-align: center;
+  padding-top: 5px;
+}
+
+.tile:hover {
+  background: #888;
 }
 
 .explored {
