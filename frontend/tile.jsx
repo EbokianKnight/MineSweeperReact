@@ -13,6 +13,9 @@ var Tile = React.createClass({
     var flagged = tile.flagged ? "flagged " : "";
     var explored = tile.explored ? "explored " : "";
     var kaboom = this.props.lost && tile.bombed ? "bomb" : "";
+    if (tile.explored && kaboom === "bomb") {
+      kaboom = "casualty";
+    }
     return "tile " + flagged + explored + kaboom;
   },
 
